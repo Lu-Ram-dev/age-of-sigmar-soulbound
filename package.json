@@ -1,0 +1,25 @@
+{
+  "name": "age-of-sigmar-soulbound",
+  "version": "1.0.0",
+  "description": "Personal proyect of a WebApp that can help the players of Soulbound RPG",
+  "main": "client/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lu-Ram-dev/age-of-sigmar-soulbound.git"
+  },
+  "keywords": [
+    "RPG",
+    "Soulbound",
+    "Warhammer",
+    "Age-of-Sigmar"
+  ],
+  "author": "Ram-lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lu-Ram-dev/age-of-sigmar-soulbound/issues"
+  },
+  "homepage": "https://github.com/Lu-Ram-dev/age-of-sigmar-soulbound#readme"
+}
