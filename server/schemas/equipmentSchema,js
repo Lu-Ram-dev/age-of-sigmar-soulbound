@@ -1,0 +1,41 @@
+const mongoose = require('mongoose');
+const effectSchema = require('./effectSchema')
+
+const equipmentSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  type: {
+    type: String,
+    enum: ['meleeWeapon', 'rangedWeapon', 'armor', 'kharadron', 'misc'],
+    required: true,
+  },
+  cost: {
+    type: Number,
+    required: true,
+  },
+  rarity: {
+    type: String,
+    enum: ['common', 'uncommon', 'rare', 'legendary'],
+    required: true,
+  },
+  damage: {
+    type: String,  // Daño con fórmula como "2+S"
+    required: function() { return ['meleeWeapon', 'rangedWeapon', 'kharadron', 'misc'].includes(this.type); },
+  },
+  effects: [effectSchema],
+  traits: [String], // Rasgos como "ligero", "pesado", "mágico"
+  requirements: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Requirements', // Referencia al documento de requisitos
+  },
+});
+
+module.exports = equipmentSchema
